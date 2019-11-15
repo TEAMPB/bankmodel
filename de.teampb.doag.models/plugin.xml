@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated bankmodelpim -->
+      <package
+            uri="http://www.team-pb.de.org/models/bankmodelpim/domain"
+            class="bankmodelpim.domain.DomainPackage"
+            genModel="model/bankmodelpim.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated bankmodelpim -->
+      <package
+            uri="http://www.team-pb.de.org/models/bankmodelpim/ui"
+            class="bankmodelpim.ui.UiPackage"
+            genModel="model/bankmodelpim.genmodel"/>
+   </extension>
+
+</plugin>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated bankmodelpim -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="bankmodelpim.domain.presentation.DomainModelWizardID"
+            name="%_UI_DomainModelWizard_label"
+            class="bankmodelpim.domain.presentation.DomainModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/DomainModelFile.gif">
+         <description>%_UI_DomainModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated bankmodelpim -->
+      <editor
+            id="bankmodelpim.domain.presentation.DomainEditorID"
+            name="%_UI_DomainEditor_label"
+            icon="icons/full/obj16/DomainModelFile.gif"
+            extensions="domain"
+            class="bankmodelpim.domain.presentation.DomainEditor"
+            contributorClass="bankmodelpim.domain.presentation.DomainActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated bankmodelpim -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="bankmodelpim.ui.presentation.UiModelWizardID"
+            name="%_UI_UiModelWizard_label"
+            class="bankmodelpim.ui.presentation.UiModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/UiModelFile.gif">
+         <description>%_UI_UiModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated bankmodelpim -->
+      <editor
+            id="bankmodelpim.ui.presentation.UiEditorID"
+            name="%_UI_UiEditor_label"
+            icon="icons/full/obj16/UiModelFile.gif"
+            extensions="ui"
+            class="bankmodelpim.ui.presentation.UiEditor"
+            contributorClass="bankmodelpim.ui.presentation.UiActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

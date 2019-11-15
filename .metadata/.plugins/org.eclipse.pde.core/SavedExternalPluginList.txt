@@ -1,4 +1,4 @@
-# List of external plug-in models previously loaded. Timestamp: 1573831052233
+# List of external plug-in models previously loaded. Timestamp: 1573835703077
 file:/C:/eclipse/plugins/com.google.gson_2.8.2.v20180104-1110.jar
 file:/C:/eclipse/plugins/com.google.guava_21.0.0.v20170206-1425.jar
 file:/C:/eclipse/plugins/com.google.inject_3.0.0.v201605172100.jar
@@ -8,6 +8,10 @@ file:/C:/eclipse/plugins/com.jcraft.jzlib_1.1.1.v201205102305.jar
 file:/C:/eclipse/plugins/com.sun.el_2.2.0.v201303151357.jar
 file:/C:/eclipse/plugins/com.sun.jna_4.5.1.v20180403-1933.jar
 file:/C:/eclipse/plugins/com.sun.jna.platform_4.5.1.v20180403-1933.jar
+file:/C:/eclipse/plugins/de.teampb.doag.models_0.1.0.201911151733.jar
+file:/C:/eclipse/plugins/de.teampb.doag.models.edit_0.1.0.201911151733.jar
+file:/C:/eclipse/plugins/de.teampb.doag.models.editor_1.0.0.201911151733.jar
+file:/C:/eclipse/plugins/de.teampb.doag.models.tests_1.0.0.201911151733.jar
 file:/C:/eclipse/plugins/javaewah_1.1.6.v20160919-1400.jar
 file:/C:/eclipse/plugins/javax.activation_1.1.0.v201211130549.jar
 file:/C:/eclipse/plugins/javax.annotation_1.2.0.v201602091430.jar

@@ -1,7 +1,19 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: de.teampb.doag.models
-Bundle-SymbolicName: de.teampb.doag.models; singleton:=true
+Bundle-Name: %pluginName
+Bundle-SymbolicName: de.teampb.doag.models;singleton:=true
+Automatic-Module-Name: de.teampb.doag.models
 Bundle-Version: 0.1.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: bankmodelpim.domain,
+ bankmodelpim.domain.impl,
+ bankmodelpim.domain.util,
+ bankmodelpim.ui,
+ bankmodelpim.ui.impl,
+ bankmodelpim.ui.util
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.core.runtime
+Bundle-ActivationPolicy: lazy

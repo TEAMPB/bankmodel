@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain:Bank xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:domain="http://www.team-pb.de.org/models/bankmodelpim/domain" name="MyBank">
+  <customers name="Markus Klenke" password="mypassword">
+    <bankaccounts name="MainAccountMarkusKlenke" id="1" balance="90.0"/>
+    <transactions fromAccount="1" toAccount="//@customers.1/@bankaccounts.0" amount="10.0" intendedUse="Test Überweisung"/>
+  </customers>
+  <customers name="John Doe" password="keysersoze">
+    <bankaccounts name="MainAccountJohnDoe" balance="110.0"/>
+  </customers>
+</domain:Bank>

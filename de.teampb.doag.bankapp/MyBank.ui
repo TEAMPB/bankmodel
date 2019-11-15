@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ui="http://www.team-pb.de.org/models/bankmodelpim/ui">
+  <ui:Page name="LoginPage">
+    <datafield name="Username"/>
+    <datafield name="Password"/>
+    <operation input="/0/@datafield.1 /0/@datafield.0" successPage="/2" name="Login"/>
+  </ui:Page>
+  <ui:Page name="StartTransaction">
+    <datafield type="NUMERIC" name="Transaction Value"/>
+    <datafield type="NUMERIC" name="Target Bank Account Id"/>
+    <datafield name="Intention of Usage"/>
+    <operation input="/1/@datafield.0 /1/@datafield.1 /0/@datafield.0" name="Start Transaction"/>
+  </ui:Page>
+  <ui:Page layout="TABLE" name="TransactionOverview">
+    <datafield name="Target Bank Account Id"/>
+    <datafield name="Target Bank Account Name"/>
+    <datafield type="NUMERIC" name="Transaction Value"/>
+    <datafield type="DATE" name="Transaction Date"/>
+  </ui:Page>
+</xmi:XMI>
