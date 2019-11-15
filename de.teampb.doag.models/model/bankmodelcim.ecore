@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="bankmodelcim" nsURI="http://www.team-pb.de.org/models/bankmodelcim"
+    nsPrefix="bankmodelcim">
+  <eSubpackages name="businessCases" nsURI="http://www.team-pb.de.org/models/bankmodelcim/businessCases"
+      nsPrefix="businessCases">
+    <eClassifiers xsi:type="ecore:EClass" name="Transaction">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="bankaccount" lowerBound="1"
+          eType="#//businessCases/BankAccount"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BankAccount"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Person">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="bankaccounts" lowerBound="1"
+          upperBound="-1" eType="#//businessCases/BankAccount" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="mockups" nsURI="http://www.team-pb.de.org/models/bankmodelcim/mockups"
+      nsPrefix="mockups">
+    <eClassifiers xsi:type="ecore:EClass" name="Frame">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="input" upperBound="-1"
+          eType="#//mockups/Input" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="button" upperBound="-1"
+          eType="#//mockups/Button" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Input"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Button"/>
+  </eSubpackages>
+</ecore:EPackage>

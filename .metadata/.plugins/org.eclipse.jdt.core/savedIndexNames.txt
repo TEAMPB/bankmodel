@@ -1,0 +1,1 @@
+INDEX VERSION 1.131+C:\jsource\doag_mda\.metadata\.plugins\org.eclipse.jdt.core

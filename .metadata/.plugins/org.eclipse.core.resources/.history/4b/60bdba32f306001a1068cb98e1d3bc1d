@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="bankmodelpsmfullstackadf" nsURI="bankmodelpsmfullstackadf" nsPrefix="http://www.team-pb.de.org/models/bankmodelpsmfullstackadf">
+  <eClassifiers xsi:type="ecore:EClass" name="NamedObject" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eSubpackages name="businessService">
+    <eClassifiers xsi:type="ecore:EClass" name="EntityObject" eSuperTypes="#//NamedObject">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" upperBound="-1"
+          eType="#//businessService/Attribute" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ViewObject" eSuperTypes="#//NamedObject">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="entityobject" upperBound="-1"
+          eType="#//businessService/EntityObject"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="operation" upperBound="-1"
+          eType="#//businessService/Operation" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ApplicationModule" eSuperTypes="#//NamedObject">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="viewobjects" eType="#//businessService/ViewObject"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="operation" upperBound="-1"
+          eType="#//businessService/Operation" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Attribute" eSuperTypes="#//NamedObject"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Model" eSuperTypes="#//NamedObject">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="entityobjects" upperBound="-1"
+          eType="#//businessService/EntityObject" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="viewobjects" upperBound="-1"
+          eType="#//businessService/ViewObject" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="applicationmodules" upperBound="-1"
+          eType="#//businessService/ApplicationModule" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Operation" eSuperTypes="#//NamedObject"/>
+  </eSubpackages>
+  <eSubpackages name="model">
+    <eClassifiers xsi:type="ecore:EClass" name="PageDefinition" eSuperTypes="#//NamedObject">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="iteratorbinding" upperBound="-1"
+          eType="#//model/IteratorBinding" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="attributebindings" upperBound="-1"
+          eType="#//model/AttributeBinding" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="treebindings" upperBound="-1"
+          eType="#//model/TreeBinding" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="operationbindings" upperBound="-1"
+          eType="#//model/OperationBinding" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BindingContext" eSuperTypes="#//NamedObject">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="applicationmodule" upperBound="-1"
+          eType="#//businessService/ApplicationModule"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="pagedefinition" upperBound="-1"
+          eType="#//model/PageDefinition" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AttributeBinding">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" lowerBound="1"
+          eType="#//businessService/Attribute"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TreeBinding">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="viewobject" lowerBound="1"
+          eType="#//businessService/ViewObject"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" lowerBound="1"
+          upperBound="-1" eType="#//businessService/Attribute"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OperationBinding">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="operation" eType="#//businessService/Operation"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IteratorBinding">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="viewobject" lowerBound="1"
+          eType="#//businessService/ViewObject"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="controller"/>
+  <eSubpackages name="view"/>
+</ecore:EPackage>

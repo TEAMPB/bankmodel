@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="bankmodelpsmoracle" nsURI="http://www.team-pb.de.org/models/bankmodelpsmoracle"
+    nsPrefix="bankmodelpsmoracle">
+  <eClassifiers xsi:type="ecore:EClass" name="NamedObject" abstract="true" interface="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eSubpackages name="dataService">
+    <eClassifiers xsi:type="ecore:EClass" name="ViewObject" eSuperTypes="#//NamedObject">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
+          eType="#//dataService/Attribute" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="operation" upperBound="-1"
+          eType="#//dataService/Operation" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Attribute" eSuperTypes="#//NamedObject">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EEnum bankmodelpim.ecore#//ui/Type"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ApplicationModule" eSuperTypes="#//NamedObject">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="viewobjects" lowerBound="1"
+          upperBound="-1" eType="#//dataService/ViewObject" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Operation" eSuperTypes="#//NamedObject">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" upperBound="-1"
+          eType="#//dataService/Parameter" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Parameter" eSuperTypes="#//NamedObject">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EEnum bankmodelpim.ecore#//ui/Type"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="WebService" eSuperTypes="#//NamedObject">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="module" lowerBound="1"
+          eType="#//dataService/ApplicationModule" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="Type">
+      <eLiterals name="STRING"/>
+      <eLiterals name="INTEGER" value="1"/>
+      <eLiterals name="DECIMAL" value="2"/>
+      <eLiterals name="DATE" value="3"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="frontend">
+    <eClassifiers xsi:type="ecore:EClass" name="Module" eSuperTypes="#//NamedObject">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="page" upperBound="-1"
+          eType="#//frontend/Page" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Page" eSuperTypes="#//NamedObject">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="field" upperBound="-1"
+          eType="#//frontend/OJField" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="button" upperBound="-1"
+          eType="#//frontend/Button" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="table" upperBound="-1"
+          eType="#//frontend/OJTable" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OJField" eSuperTypes="#//NamedObject">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" eType="#//dataService/Attribute"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" eType="#//dataService/Parameter"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Button" eSuperTypes="#//NamedObject">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="operation" eType="#//dataService/Operation"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="field" upperBound="-1"
+          eType="#//frontend/OJField"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//frontend/Page"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OJTable" eSuperTypes="#//NamedObject">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="viewobject" eType="#//dataService/ViewObject"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>

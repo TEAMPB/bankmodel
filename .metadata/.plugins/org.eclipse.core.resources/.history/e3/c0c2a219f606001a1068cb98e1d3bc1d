@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="bankmodelpsmoracle" nsURI="http://www.team-pb.de.org/models/bankmodelpsmoracle"
+    nsPrefix="bankmodelpsmoracle">
+  <eClassifiers xsi:type="ecore:EClass" name="NamedObject" abstract="true" interface="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eSubpackages name="dataService">
+    <eClassifiers xsi:type="ecore:EClass" name="ViewObject">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
+          eType="#//dataService/Attribute" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="operation" upperBound="-1"
+          eType="#//dataService/Operation" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Attribute"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ApplicationModule">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="viewobjects" lowerBound="1"
+          upperBound="-1" eType="#//dataService/ViewObject" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Operation">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" upperBound="-1"
+          eType="#//dataService/Parameter" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Parameter"/>
+    <eClassifiers xsi:type="ecore:EClass" name="WebService">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="module" lowerBound="1"
+          eType="#//dataService/ApplicationModule" containment="true"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>

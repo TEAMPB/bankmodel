@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="bankmodelpim" nsURI="http://www.team-pb.de.org/models/bankmodelpim"
+    nsPrefix="bankmodelpim">
+  <eSubpackages name="domain" nsURI="http://www.team-pb.de.org/models/bankmodelpim/domain"
+      nsPrefix="domain">
+    <eClassifiers xsi:type="ecore:EClass" name="BankAccountHolder" eSuperTypes="#//domain/PIMBankObject">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="bankaccounts" lowerBound="1"
+          upperBound="-1" eType="#//domain/BankAccount" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="transactions" upperBound="-1"
+          eType="#//domain/AccountTransaction" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BankAccount" eSuperTypes="#//domain/PIMBankObject">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+          iD="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="balance" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Bank" eSuperTypes="#//domain/PIMBankObject">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="customers" upperBound="-1"
+          eType="#//domain/BankAccountHolder" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PIMBankObject" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AccountTransaction">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="fromAccount" lowerBound="1"
+          eType="#//domain/BankAccount"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="toAccount" lowerBound="1"
+          eType="#//domain/BankAccount"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>
